@@ -10,5 +10,7 @@ public class TestPropiedades {
 		valor = ConexionBDD.leerPropiedad("xx");
 		System.out.println(valor);
 	}
+	
+	
 
 }

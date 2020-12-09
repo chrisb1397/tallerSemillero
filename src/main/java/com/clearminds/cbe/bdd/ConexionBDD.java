@@ -3,7 +3,12 @@ package com.clearminds.cbe.bdd;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
+
+import com.clearminds.cbe.excepciones.BDDException;
 
 public class ConexionBDD {
 	
@@ -26,9 +31,23 @@ public class ConexionBDD {
 		}
 		
 		return propiedadA;
-
+	}
+	
+	
+	public static Connection obtenerConexion() throws BDDException{
+		Connection con = null;
+		String url = leerPropiedad("urlConexion");
+		String user = leerPropiedad("usuario");
+		String password = leerPropiedad("password");
 		
-
+		try {
+			con = DriverManager.getConnection(url, user, password);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new BDDException("No se pudo conectar a la base de datos!!!");
+		}
+		
+		return con;
 	}
 
 }
