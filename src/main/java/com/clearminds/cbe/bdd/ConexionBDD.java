@@ -1,5 +1,6 @@
 package com.clearminds.cbe.bdd;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,6 +16,9 @@ public class ConexionBDD {
 	public static String leerPropiedad(String propiedad){
 		Properties p = new Properties();
 		String propiedadA = null;
+		File f=new File("conexion.properties");
+		System.out.println("ruta:"+f.getAbsoluteFile());
+
 		try {
 			if (p != null) {
 				p.load(new FileReader("conexion.properties"));

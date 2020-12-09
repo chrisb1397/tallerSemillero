@@ -27,5 +27,11 @@
 			<artifactId>mssql-jdbc</artifactId>
 			<version>8.4.1.jre8</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.clearminds.cbe</groupId>
+			<artifactId>model</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 </project>
