@@ -9,7 +9,7 @@ public class TestServicioActualizar {
 	public static void main(String[] args) {
 		ServicioEstudiante srvEstudiante = new ServicioEstudiante();
 		try {
-			srvEstudiante.actualizarEstudiante(new Estudiante(2, "Pedro", "Navaja"));
+			srvEstudiante.actualizarEstudiante(new Estudiante(2, "Pedro", "Navaja", 20));
 		} catch (BDDException e) {
 			e.printStackTrace();
 			e.getMessage();
